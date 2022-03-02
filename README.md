@@ -12,4 +12,4 @@ The changes definetly did improve the readablilty of the code. I was able to nam
 The 6 line rule in my opinion was good to, but just for this asignment. In this assignment I was able to break the code down, but I could think of alot of cases where trying to reduce the lines to 6 this much would make the code hard to read/understand, or even in some cases impossible to write.
 ## Some extra notes
 1) The program doesnt work for files that have empty lines in them. This is how the original file was, so I didnt bother changing it.
-2) The JUnit test causes the Test files to change. So if you want to run it again and actually test the program, youd have to undo the changes in the Test files after they are formatted.
+2) The JUnit test causes the Test files to change, so uou can only run it once. If you want to run it again and actually test the program, youd have to undo the changes in the Test files after they are formatted.
