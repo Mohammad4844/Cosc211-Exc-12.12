@@ -19,6 +19,9 @@ class JUnitTest {
     assertTrue(actualText.equals(expectedText));
   }
 
+  /**
+   * Helper method that extracts text from a file. Removes unnecessary clutter from the Test methods
+   */
   private static String textFromFile(String path) throws FileNotFoundException {
     Scanner input = new Scanner(new File(path));
     String text = "";
