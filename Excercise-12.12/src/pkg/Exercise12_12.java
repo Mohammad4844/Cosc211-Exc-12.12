@@ -37,7 +37,7 @@ public class Exercise12_12 {
   /**
    * Changes the contents of the file that is passed in as a parameter
    */
-  private static void changeFileContent(File sourceFile) throws Exception {
+  private static void changeFileContent(File sourceFile) throws FileNotFoundException {
     StringBuilder buffer = new StringBuilder();
     Scanner input = new Scanner(sourceFile);
     buffer = formatWholeFile(buffer, input);
@@ -69,13 +69,13 @@ public class Exercise12_12 {
   /**
    * Outputs the formatted text back to the file
    */
-  private static void outputBufferToFile(File sourceFile, StringBuilder buffer) throws Exception {
+  private static void outputBufferToFile(File sourceFile, StringBuilder buffer) throws FileNotFoundException {
     PrintWriter output = new PrintWriter(sourceFile);
     output.print(buffer.toString());
     output.close();
   }
 
-  public static void main(String[] args) throws Exception {
+  public static void main(String[] args) throws FileNotFoundException {
     checkCommandLineParameters(args);
     checkIfSourceFileExists(args);
     File sourceFile = new File(args[0]);
