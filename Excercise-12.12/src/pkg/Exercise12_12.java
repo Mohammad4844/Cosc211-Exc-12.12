@@ -5,13 +5,14 @@ import java.io.*;
 
 /**
  * A program which formats code from 'next line' brace style to the 'end of line' brace style. Is
- * run form the command line (type in the name of the files that need to be formatted as parameters). 
+ * run form the command line (type in the name of the files that need to be formatted as
+ * parameters).
  * <p>
- * Note: the program doesn't work when there is an empty line in the code
- * (a gap). This is how the original code functioned as well.
+ * Note: the program doesn't work when there is an empty line in the code (a gap). This is how the
+ * original code functioned as well.
  */
 public class Exercise12_12 {
-  
+
   /**
    * Checks if there is a parameter entered through the command line.
    */
@@ -21,7 +22,7 @@ public class Exercise12_12 {
       System.exit(1);
     }
   }
- 
+
   /**
    * Checks if file that is to be formatted exists
    */
@@ -44,7 +45,7 @@ public class Exercise12_12 {
   }
 
   /**
-   * Formats the code from 'next line' brace style to the 'end of line' brace style 
+   * Formats the code from 'next line' brace style to the 'end of line' brace style
    */
   public static StringBuilder formatWholeFile(StringBuilder buffer, Scanner input) {
     while (input.hasNext()) {
@@ -61,11 +62,8 @@ public class Exercise12_12 {
    * necessary replacements
    */
   public static String formatLine(String s, String s1) {
-    return (s1.charAt(0) == '{') ? 
-        (s1.length() > 1) ? 
-            " {" + "\r\n" + s.replace('{', ' ') 
-            : " {"
-        : "\r\n" + s;
+    return (s1.charAt(0) == '{') ? (s1.length() > 1) ? " {" + "\r\n" + s.replace('{', ' ') : " {"
+        : "\r\n" + s; //had to rewrite this part like this because simpler if-else took more than 6 lines
   }
 
   /**
@@ -82,6 +80,5 @@ public class Exercise12_12 {
     checkIfSourceFileExists(args);
     File sourceFile = new File(args[0]);
     changeFileContent(sourceFile);
-
   }
 }

@@ -11,7 +11,6 @@ class JUnitTest {
   @Test
   public void testCodeFormatter_TestFile1() throws Exception {
     Exercise12_12.main(new String[] {"test/pkg/TestFile1.java"});
-
     String actualText = textFromFile("test/pkg/TestFile1.java");
     String expectedText = "package pkg;\n" + "public class TestFile1  {\n"
         + "  public static void main(String[] args)  {\n" + "    // Some statements\n" + "  }\n"
@@ -22,34 +21,14 @@ class JUnitTest {
   @Test
   public void testCodeFormatter_TestFile2() throws Exception {
     Exercise12_12.main(new String[] {"test/pkg/TestFile2.java"});
-
     String actualText = textFromFile("test/pkg/TestFile2.java");
-    String expectedText = 
-     "package pkg;\n"
-    +"public class TestFile2 {\n"
-    +"  int sampleValue;\n"
-    +"  public TestFile2 (int sampleValue) {\n"
-    +"    if (sampleValue > 0) {\n"
-    +"      this.sampleValue = sampleValue;\n"
-    +"    }\n" 
-    +"    else {\n"
-    +"      this.sampleValue = -1;\n"
-    +"    }\n"
-    +"  }\n"
-    +"}\n";
-        
-//        "package pkg;\n" + "public class TestFile2  {\n" + "  int sampleValue;\n"
-//        + "  public TestFile2 (int sampleValue)  {\n" + "    if (sampleValue > 0)  {\n"
-//        + "      this.sampleValue = sampleValue;\n" + "    }\n" + "    else  {\n" + "      System.exit(0);\n"
-//        + "    }\n" + "  }\n"
-//        + "}\n";
-    System.out.println(actualText);
-    System.out.println(expectedText);
-    System.out.println("v");
+    String expectedText = "package pkg;\n" + "public class TestFile2 {\n" + "  int sampleValue;\n"
+        + "  public TestFile2 (int sampleValue) {\n" + "    if (sampleValue > 0) {\n"
+        + "      this.sampleValue = sampleValue;\n" + "    }\n" + "    else {\n"
+        + "      this.sampleValue = -1;\n" + "    }\n" + "  }\n" + "}\n";
     assertTrue(actualText.equals(expectedText));
-    
   }
-  
+
   /**
    * Helper method that extracts text from a file. Removes unnecessary clutter from the Test methods
    */
