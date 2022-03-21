@@ -12,9 +12,14 @@ class JUnitTest {
   public void testCodeFormatter_TestFile1() throws Exception {
     Exercise12_12.main(new String[] {"test/pkg/TestFile1.java"});
     String actualText = textFromFile("test/pkg/TestFile1.java");
-    String expectedText = "package pkg;\n" + "public class TestFile1  {\n"
-        + "  public static void main(String[] args)  {\n" + "    // Some statements\n" + "  }\n"
-        + "}\n";
+    String expectedText = """
+        package pkg;
+        public class TestFile1 {
+          public static void main(String[] args) {
+            // Some statements
+          }
+        }
+        """;
     assertTrue(actualText.equals(expectedText));
   }
 
@@ -22,10 +27,20 @@ class JUnitTest {
   public void testCodeFormatter_TestFile2() throws Exception {
     Exercise12_12.main(new String[] {"test/pkg/TestFile2.java"});
     String actualText = textFromFile("test/pkg/TestFile2.java");
-    String expectedText = "package pkg;\n" + "public class TestFile2 {\n" + "  int sampleValue;\n"
-        + "  public TestFile2 (int sampleValue) {\n" + "    if (sampleValue > 0) {\n"
-        + "      this.sampleValue = sampleValue;\n" + "    }\n" + "    else {\n"
-        + "      this.sampleValue = -1;\n" + "    }\n" + "  }\n" + "}\n";
+    String expectedText = """
+        package pkg;
+        public class TestFile2 {
+          int sampleValue;
+          public TestFile2 (int sampleValue) {
+            if (sampleValue > 0) {
+              this.sampleValue = sampleValue;
+            }
+            else {
+              this.sampleValue = -1;
+            }
+          }
+        }
+        """;
     assertTrue(actualText.equals(expectedText));
   }
 
